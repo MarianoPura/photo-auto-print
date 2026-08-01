@@ -115,7 +115,8 @@ const upload = async (file) => {
 };
 
 async function printQR(qrImage, imageName) {
-
+    const qrSize = 220;
+    const qrX = (config.paperWidth - qrSize) / 2;
     return new Promise((resolve, reject) => {
 
         const pdf =
@@ -137,17 +138,6 @@ async function printQR(qrImage, imageName) {
 
         doc.pipe(stream);
 
-        doc.fontSize(18);
-
-        doc.text(
-            config.eventName,
-            {
-                align: "center"
-            }
-        );
-
-        doc.moveDown();
-
         doc.fontSize(12);
 
         doc.text(
@@ -161,20 +151,10 @@ async function printQR(qrImage, imageName) {
 
         doc.image(
             qrImage,
+            qrX,
+            doc.y,
             {
-                fit: [220, 220],
-                align: "center"
-            }
-        );
-
-        doc.moveDown();
-
-        doc.fontSize(10);
-
-        doc.text(
-            path.basename(imageName),
-            {
-                align: "center"
+                fit: [qrSize, qrSize]
             }
         );
 
