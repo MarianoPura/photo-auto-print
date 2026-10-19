@@ -1,10 +1,10 @@
 {
-    "uploadUrl": "http://54.179.49.80/media-service/upload.php",
+    "uploadUrl": "INSERT UPLOAD URL/DIRECTORY HERE",
     "watchFolder": "drop-here",
     "processedFolder": "processed",
     "failedFolder": "failed",
-    "printer": "EPSON L3210",
-    "eventName": "ASEAN Summit",
+    "printer": "INSERT PRINTER NAME HERE",
+    "eventName": "INSERT EVENT NAME HERE",
     "paperWidth": 300,
     "paperHeight": 450
 }

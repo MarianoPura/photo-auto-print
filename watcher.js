@@ -56,8 +56,10 @@ const upload = async (file) => {
             }
         );
 
-        if (!res.data.success)
-            throw "Upload failed";
+        if (!res.data.success) {
+            console.log(res.data.message);
+            return;
+        }
 
         console.log("Uploaded!");
 
